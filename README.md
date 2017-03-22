@@ -5,7 +5,7 @@ Just for my own.
 
 Includes: Dejavu TTF font, putty/vim solarized color theme (a little customized), own zsh/vimrc files
 
-* Shell configuration
+## Shell configuration
 
 1. vim
 ```
@@ -20,6 +20,6 @@ git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggesti
 echo "\nsource ~/.zshrc_custom" >> ~/.zshrc
 ```
 
-* LICENSE
+## LICENSE
 
 MIT License for only for this readme file. other else follows each developer's license.
