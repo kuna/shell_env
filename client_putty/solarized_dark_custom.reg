@@ -23,8 +23,9 @@ Windows Registry Editor Version 5.00
 "Colour19"="147,161,161"
 "Colour20"="238,232,213"
 "Colour21"="253,246,227"
-"Xterm256Colour"="1"
-"X11Forward"="1"
+"Xterm256Colour"=dword:00000001
+"X11Forward"=dword:00000001
 "TerminalType"="xterm-256color"
 "Font"="DejaVu Sans Mono for Powerline"
-"FontHeight"="12"
+"FontHeight"=dword:0000000c
+"LineCodePage"="UTF-8"
