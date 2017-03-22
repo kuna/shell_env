@@ -1,4 +1,3 @@
-===
 My Shell / SSH Client configuration
 ===
 
