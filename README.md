@@ -20,3 +20,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 echo "\nsource ~/.zshrc_custom" >> ~/.zshrc
 ```
+
+* LICENSE
+
+MIT License for only for this readme file. other else follows each developer's license.
