@@ -19,6 +19,14 @@ cp linux/zshrc ~/.zshrc
 echo "install oh-my-zsh"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
+echo "install zsh-autosuggestions"
+mkdir -p $HOME/.oh-my-zsh/custom
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+echo "creating locale"
+apt install locales
+locale-gen en_US.UTF-8
+
 echo "install vim vundle plugins"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
