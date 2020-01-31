@@ -23,4 +23,7 @@ echo "install vim vundle plugins"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
+echo "install powerline font if you want ..."
+echo "> sudo apt-get install fonts-powerline"
+
 echo "done"
