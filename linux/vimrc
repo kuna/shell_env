@@ -1,0 +1,69 @@
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'   " vundle itself
+Plugin 'scrooloose/nerdtree'    " file explorer
+Plugin 'ctrlpvim/ctrlp.vim'     " file string search
+Plugin 'majutsushi/tagbar'      " tag explorer
+Plugin 'rhysd/vim-clang-format' " code styler
+Plugin 'bling/vim-airline'      " status bar
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tmhedberg/simpylfold'   " code folder
+Plugin 'tpope/vim-fugitive'     " git command
+call vundle#end()
+filetype plugin indent on
+
+" --
+" plugin settings
+" --
+let g:airline_section_x=''
+"let g:airline_theme='molokai'
+let g:airline_powerline_fonts=1
+let g:syntastic_cpp_compiler_options=' -std=c++11'
+
+" --
+" common default settings
+" --
+set nocompatible
+syntax on
+set backspace=indent,eol,start
+set hlsearch
+set et si ai nu
+set mouse=a
+set t_Co=256
+highlight LineNr cterm=bold ctermfg=0 guifg=Grey guibg=Grey90
+set background=dark
+set cursorline
+set colorcolumn=100
+hi colorcolumn      ctermbg=240
+hi CursorLine       term=bold cterm=bold ctermbg=235
+
+
+" --
+" Tibero settings
+" --
+let tbrcname = "~/.vimrc_tb"
+if filereadable(expand(tbrcname))
+  exe "so " . tbrcname
+endif
+
+
+" F5 to set encoding CP949,
+" F6 to set encoding UTF8
+nmap <F5> :e ++enc=cp949<CR>:set fileencodings=cp949<CR>
+nmap <F6> :e ++enc=utf8<CR>:set fileencodings=utf8<CR>
+nmap <F4> :TagbarToggle<CR>
+nmap <F3> :NERDTreeToggle<CR>
+
+if $VIMENC=="cp949"
+    " encoding to cp949 (TB6)
+    set fileencodings=cp949
+    "set encoding=cp949
+    set sw=4 ts=4
+else
+    " UTF8 and indent level 2 (default)
+    set fileencodings=utf8
+    "set encoding=utf8
+    set sw=2 ts=2
+endif

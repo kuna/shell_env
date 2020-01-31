@@ -1,0 +1,38 @@
+export ZSH="/home/lazykuna/.oh-my-zsh"
+ZSH_THEME="agnoster"
+plugins=(git zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh
+
+# if you use rvm ...
+#. /usr/local/rvm/scripts/rvm
+
+
+# XXX: set paths / envs on your own
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-amd64
+export PATH=$JAVA_HOME:$PATH
+
+# store shell type
+BASH_TYPE=$0
+
+alias callgrind='callgrind --collect-jumps=yes --trace-children=yes --simulate-cache=yes'
+alias valgrind='valgrind -v --suppressions=$TB_HOME/src/scripts/tbsvr-valgrind.supp --trace-children=yes --log-file=VGLOG --leak-check=full --show-reachable=yes'
+printf "\e[?2004l"  # bracket paste mode disable
+TERM=xterm-256color
+alias ic='iconv -f EUC-KR -c'
+alias svne='LANG="en_US" svn'
+alias cs='cscope'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias h='history'
+alias cp='cp -i'
+alias mv='mv -i'
+alias xgrep="find . -not \\( -path '*/.svn/*' -o -path '*/.build/*' -o -path '*/nbsvr/*' -o -regex '^[a-z]+$' -o -name 'cscope.out' -o -name '*.yy.c' -o -name '*.output' -o -name '*.dat' -o -name 'tags' -o -name '.testab*' -o -name '*.tab.c' -o -name '*.swp' -o -name '*gen.h' -o -name 'dd_stub_data.h' -o -name 'dd_mount_mode_img.h' \\) -a -type f | xargs grep -Hn"
+
+export LANG=C.UTF-8
+
+#for executing extern script
+if [ ! -z "$RUN" ]; then
+  eval "$RUN"
+  unset RUN
+fi
