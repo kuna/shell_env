@@ -11,11 +11,6 @@ if [ -f ~/.bashrc ]; then
   mv ~/.bashrc ~/.bashrc.bak
 fi
 
-echo "copy vim / bash / zsh config"
-cp linux/vimrc ~/.vimrc
-cp linux/bashrc ~/.bashrc
-cp linux/zshrc ~/.zshrc
-
 echo "install oh-my-zsh"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
@@ -30,6 +25,14 @@ locale-gen en_US.UTF-8
 echo "install vim vundle plugins"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+
+echo "copy vim / bash / zsh config"
+cp linux/vimrc ~/.vimrc
+cp linux/bashrc ~/.bashrc
+cp linux/zshrc ~/.zshrc
+
+echo "change default shell to zsh"
+sudo chsh -s /bin/zsh
 
 echo "install powerline font if you want ..."
 echo "> sudo apt-get install fonts-powerline"
