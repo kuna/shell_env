@@ -1,7 +1,7 @@
 My Shell / SSH Client configuration
 ===
 
-# Install
+## Install
 
 ```sh
 which zsh
