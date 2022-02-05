@@ -7,8 +7,9 @@ My Shell / SSH Client configuration
 which zsh
 chsh -s /usr/bin/zsh
 cp -rf * ~
+cp .* ~
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 ```
 
-open vi and enter ```:PluginInstall```
-
-Often used font: ***Droid Sans Mono for Powerline***
+Often used terminal font: ***Droid Sans Mono for Powerline***
