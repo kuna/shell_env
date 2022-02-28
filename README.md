@@ -14,4 +14,4 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 ```
 
-Often used terminal font: ***Droid Sans Mono for Powerline***
+Often used terminal font: ***Meslo LG M Regular for Powerline***
