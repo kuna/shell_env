@@ -121,6 +121,10 @@ function xgrep() {
   grep ${1} -r .
 }
 
+function xfind() {
+  find . -name ${1}
+}
+
 function proj() {
   # command: set current project as home
   export PROJ_HOME=`pwd`
