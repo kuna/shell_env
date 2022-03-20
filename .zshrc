@@ -102,3 +102,32 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export GOPATH=~/go
+export GPG_TTY=$TTY
+alias home="cd ~"
+
+# only for mac.
+export PATH=/Users/dongwon/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH
+
+# for my own dev
+alias gotest="gotestsum ./..."
+alias pd="pushd"
+alias bd="popd"
+export CDPATH=$CDPATH:~/Github/
+
+function xgrep() {
+  # grep file list from text
+  grep ${1} -r .
+}
+
+function proj() {
+  # command: set current project as home
+  export PROJ_HOME=`pwd`
+  export CDPATH=$CDPATH:$PROJ_HOME
+  echo "Set current project home: $PROJ_HOME"
+}
+
+# install: brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+alias mktags="ctags -R"
+

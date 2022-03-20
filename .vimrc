@@ -18,10 +18,11 @@ Plugin 'ronakg/quickr-cscope.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 call vundle#end() " required
 filetype plugin indent on " required
 
-set sw=4  ts=4 ai hlsearch nu
+set sw=4  ts=4 ai si et hlsearch nu
 set cursorline
 set fileencoding=utf8
 let g:airline_theme='molokai'
@@ -34,3 +35,24 @@ syntax on
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 colorscheme molokai
+
+if $PROJ_HOME != ""
+  " ctags-if necessary
+  set tags=$PROJ_HOME
+  set path+=$PROJ_HOME/**
+else
+  " find "filename" for all sub folders
+  set path+=**
+endif
+
+" for golang file
+au FileType go nmap <F12> :GoDef<CR>
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap gd <Plug>(go-def-tab)
+
+" for c/cpp file
+autocmd FileType cpp nmap <F12> <C-]>
