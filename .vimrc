@@ -28,12 +28,14 @@ set fileencoding=utf8
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 nmap <F8> :NERDTreeToggle<CR>
+nmap \f :vimgrep /<C-r><C-w>/j % <bar> cwindow<cr>
 set term=xterm-256color
 set background=dark
 set mouse=a
 syntax on
 "let g:molokai_original = 1
 "let g:rehash256 = 1
+let g:go_fmt_command = "goimports"
 colorscheme molokai
 
 if $PROJ_HOME != ""
@@ -55,4 +57,4 @@ au FileType go nmap <Leader>t <Plug>(go-test)
 au FileType go nmap gd <Plug>(go-def-tab)
 
 " for c/cpp file
-autocmd FileType cpp nmap <F12> <C-]>
+au FileType cpp nmap <F12> <C-]>
