@@ -118,7 +118,7 @@ export CDPATH=$CDPATH:~/Github/
 
 function xgrep() {
   # grep file list from text
-  grep ${1} -r .
+  grep ${1} -nr .
 }
 
 function xfind() {
