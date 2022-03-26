@@ -55,6 +55,7 @@ au FileType go nmap <Leader>r <Plug>(go-run)
 au FileType go nmap <Leader>b <Plug>(go-build)
 au FileType go nmap <Leader>t <Plug>(go-test)
 au FileType go nmap gd <Plug>(go-def-tab)
+au FileType go nmap gr :!go run %<CR>
 
 " for c/cpp file
 au FileType cpp nmap <F12> <C-]>
